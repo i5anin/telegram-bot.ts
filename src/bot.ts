@@ -1,7 +1,7 @@
+#! /usr/bin/env node
 import { Telegraf, Context } from 'telegraf';
 import { DateTime } from 'luxon';
-
-require('dotenv').config();
+import 'dotenv/config';
 
 const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
