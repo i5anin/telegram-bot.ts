@@ -6,12 +6,11 @@
   "main": "src/bot.ts",
   "scripts": {
     "build": "tsc",
-    "minify": "terser dist/bot.js -o dist/bot.min.js",
-    "build:prod": "npm run build && npm run minify",
+    "start": "tsc && node dist/bot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bot": "node --loader ts-node/esm src/bot.ts",
     "nodemon": "npx nodemon node src/bot.js",
-    "prod:start": "pm2-runtime dist/bot.min.js",
+    "prod:start": "pm2-runtime app.js",
     "lint": "eslint src",
     "lint-fix": "eslint \"src/**/*.js\" --fix"
   },
