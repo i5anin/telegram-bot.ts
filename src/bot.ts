@@ -5,9 +5,9 @@ import 'dotenv/config';
 
 const bot = new Telegraf(process.env.BOT_TOKEN as string);
 
-bot.start((ctx: Context) => {
-    const now = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
-    ctx.reply(`Текущее время: ${now}`);
+bot.start((ctx) => {
+    console.log("Бот успешно запущен!");
+    ctx.reply(`Текущее время: ${DateTime.now().toLocaleString(DateTime.DATETIME_FULL)}`);
 });
 
 bot.launch();

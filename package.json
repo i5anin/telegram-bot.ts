@@ -5,10 +5,13 @@
   "type": "module",
   "main": "src/bot.ts",
   "scripts": {
+    "build": "tsc",
+    "minify": "terser dist/bot.js -o dist/bot.min.js",
+    "build:prod": "npm run build && npm run minify",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bot": "node --loader ts-node/esm src/bot.ts",
     "nodemon": "npx nodemon node src/bot.js",
-    "prod:start": "pm2-runtime app.js",
+    "prod:start": "pm2-runtime dist/bot.min.js",
     "lint": "eslint src",
     "lint-fix": "eslint \"src/**/*.js\" --fix"
   },
@@ -29,6 +32,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
+    "terser": "^5.31.1",
     "typescript": "^5.4.5"
   },
   "dependencies": {
@@ -48,7 +52,7 @@
     "request": "^2.88.2",
     "sharp": "^0.33.4",
     "sqlite3": "^5.1.6",
-    "telegraf": "^4.11.2",
+    "telegraf": "^4.16.3",
     "telegraf-session-local": "^2.1.1",
     "ts-node": "^10.9.2"
   }
