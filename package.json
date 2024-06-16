@@ -7,15 +7,16 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && node dist/bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "bot": "node --loader ts-node/esm src/bot.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "nodemon": "npx nodemon node src/bot.js",
     "prod:start": "pm2-runtime app.js",
     "lint": "eslint src",
-    "lint-fix": "eslint \"src/**/*.js\" --fix"
+    "lint-fix": "eslint \"src/**/*.js\" --fix",
+    "dev": "tsc --watch & nodemon dist/bot.js"
   },
   "imports": {
-    "#src/*": "./src/*.js"
+    "@src/*": "./src/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5",
     "terser": "^5.31.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
