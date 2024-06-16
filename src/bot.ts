@@ -1,7 +1,7 @@
 //bot.ts
 import { Telegraf, Context } from 'telegraf';
 import 'dotenv/config';
-import { startCommand } from '@/commands';
+import { startCommand } from './modules/start/commands.js';
 
 const bot = new Telegraf<Context>(process.env.BOT_TOKEN as string);
 
